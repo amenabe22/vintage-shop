@@ -1,0 +1,14 @@
+.slick-slide {
+    margin: 0 15px;
+}
+
+
+/* the parent */
+
+.slick-list {
+    margin: 0 -27px;
+}
+
+.slick-track {
+    height: 300px;
+}
