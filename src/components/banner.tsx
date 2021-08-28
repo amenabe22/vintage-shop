@@ -16,7 +16,7 @@ const TopBanner = ({ theme }: any) => {
                 color: "white",
             }}>
                 <img src={VintageBook} alt="Snow" className="object-cover w-full xl:h-96 h-72" style={{
-                    opacity: "0.7"
+                    opacity: theme === "dark" ? "0.7" : "0.99999"
                 }} />
                 <div style={{
                     position: "absolute",

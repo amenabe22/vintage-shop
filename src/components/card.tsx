@@ -1,10 +1,14 @@
 import React from 'react'
 import cover from '../images/fashionable.jpg'
 import styled from 'styled-components'
+import { useHistory } from 'react-router-dom'
 
 export const ItemCard = (props: any) => {
+    const history = useHistory()
     return (
-        <div className="bg-gray-50 mt-10 lg:mt-0 md:mt-0 xl:mt-0 dark:bg-gray-900 flex justify-center items-start cursor-pointer">
+        <div 
+            className="bg-gray-50 mt-10 lg:mt-0 md:mt-0 xl:mt-0 dark:bg-gray-900 flex justify-center items-start cursor-pointer"
+            onClick={()=>history.push("/detail")}>
             <div className="lg:mx-5 p-6 dark:bg-gray-800 bg-white rounded-none shadow-xl hover:shadow-2xl hover:scale-105 transition-all transform duration-500">
                 <img className="h-82 object-cover rounded-t-md" src={cover} alt="" />
                 <div className="mt-4">

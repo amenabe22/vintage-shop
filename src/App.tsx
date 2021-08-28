@@ -8,17 +8,14 @@ import { CustomFooter } from './components/footer';
 // import Carousel from "react-elastic-carousel";
 import Carousel from 'react-elastic-carousel'
 import { connect } from 'react-redux'
+import { mapStateToProps } from './mappers'
 
-
-const mapStateToProps = ({ theme }: any) => {
-  return { theme }
-}
 const App = ({ theme }: any) => {
   const Arrow = ({ type, onClick, isEdge }: any) => {
-    const left = <svg xmlns="http://www.w3.org/2000/svg" className="h-12 w-12 dark:text-white text-gray-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+    const left = <svg xmlns="http://www.w3.org/2000/svg" className="h-12 w-12 dark:text-white text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 15l-3-3m0 0l3-3m-3 3h8M3 12a9 9 0 1118 0 9 9 0 01-18 0z" />
     </svg>;
-    const right = <svg xmlns="http://www.w3.org/2000/svg" className="h-12 w-12 dark:text-white text-gray-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+    const right = <svg xmlns="http://www.w3.org/2000/svg" className="h-12 w-12 dark:text-white text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 9l3 3m0 0l-3 3m3-3H8m13 0a9 9 0 11-18 0 9 9 0 0118 0z" />
     </svg>;
     const pointer = type === 'PREV' ? left : right
