@@ -13,6 +13,7 @@ function classNames(...classes: any) {
 const Detail = ({ theme }: any) => {
     const [selectedColor, setSelectedColor] = useState(product.colors[0])
     const [selectedSize, setSelectedSize] = useState(product.sizes[2])
+    window.scrollTo(0, 0);
 
     return (
         <div className={"bg-white " + (theme === 'dark' ? 'dark' : '')}>

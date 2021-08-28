@@ -23,7 +23,7 @@ const TopBanner = ({ theme }: any) => {
                     top: "35%",
                     left: "16px",
                 }}>
-                    <div className="text-left mx-12">
+                    <div className="text-left mx-0 lg:mx-12 xl:mx-12 md:mx-12">
                         <p className="font-bold text-sm uppercase">Services</p>
                         <p className="text-3xl font-bold">Multimedia products</p>
                         <p className="text-2xl mb-6 leading-none">Atractive designs for your brand</p>

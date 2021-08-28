@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { changeTheme } from '../actions/'
@@ -12,6 +12,8 @@ const Header = ({ changeTheme, theme }: any) => {
         { path: "/contact", name: "Contact" },
         { path: "/about", name: "About" }];
     const location = useLocation()
+    const [drawer, setDrawer] = useState(false)
+
     const sun = <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
     </svg>;
@@ -28,7 +30,7 @@ const Header = ({ changeTheme, theme }: any) => {
                         </svg>
                         <span className="mx-1 text-sm">Addis Ababa</span>
                     </div>
-                    <div className="w-full dark:text-white text-gray-700 md:text-center text-5xl font-semibold">
+                    <div className="w-full dark:text-white text-gray-700 md:text-center xl:text-5xl lg:text-5xl sm:text-4xl text-3xl font-semibold">
                         Vintage Collectables
                 </div>
                     <div className="flex items-center justify-end w-full">
@@ -47,7 +49,9 @@ const Header = ({ changeTheme, theme }: any) => {
                         </button>
 
                         <div className="flex sm:hidden">
-                            <button type="button" className="text-gray-600 hover:text-gray-500 focus:outline-none focus:text-gray-500" aria-label="toggle menu">
+                            <button type="button" className="text-gray-600 hover:text-gray-500 focus:outline-none focus:text-gray-500" aria-label="toggle menu" onClick={
+                                () => setDrawer(!drawer)
+                            }>
                                 <svg viewBox="0 0 24 24" className="h-6 w-6 fill-current">
                                     <path fill-rule="evenodd" d="M4 5h16a1 1 0 0 1 0 2H4a1 1 0 1 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2z"></path>
                                 </svg>
@@ -55,7 +59,7 @@ const Header = ({ changeTheme, theme }: any) => {
                         </div>
                     </div>
                 </div>
-                <nav className="sm:flex sm:justify-center sm:items-center mt-4">
+                <nav className={"sm:flex sm:justify-center sm:items-center mt-4 " + (drawer ? "" : "hidden")}>
                     <div className="flex flex-col sm:flex-row">
                         {navigationRoutes.map((route, idx) => {
                             return (<Link
@@ -66,7 +70,7 @@ const Header = ({ changeTheme, theme }: any) => {
                     </div>
                 </nav>
                 <div className="mb-5">
-                    <div className="relative mt-6 max-w-lg mx-auto">
+                    <div className="relative mt-6 max-w-lg lg:mx-auto xl:mx-auto">
                         <span className="absolute inset-y-0 left-0 pl-3 flex items-center">
                             <svg className="h-5 w-5 text-gray-500 dark:text-white" viewBox="0 0 24 24" fill="none">
                                 <path d="M21 21L15 15M17 10C17 13.866 13.866 17 10 17C6.13401 17 3 13.866 3 10C3 6.13401 6.13401 3 10 3C13.866 3 17 6.13401 17 10Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
